@@ -1,0 +1,178 @@
+# FPGA — Fabric, Design and Architecture
+### VLSI System Design (VSD) Workshop
+
+**Author:** Ashley Bothello  
+**Domain:** FPGA Design, Digital Systems and VLSI  
+**Repository:** [VSD-FPGA-Fabric-Design-Architecture](https://github.com/ashleybothello/VSD-FPGA-Fabric-Design-Architecture)
+
+---
+
+## 1. Introduction
+
+This repository documents the practical exercises and technical work undertaken as part of the **FPGA — Fabric, Design and Architecture workshop conducted by VLSI System Design (VSD)**.
+
+The workshop explores FPGA architecture and the digital design implementation process, including RTL design, logic synthesis, netlist generation, placement and routing, timing analysis, and switching-activity analysis. The repository maintains the available design files, reports, terminal outputs, and screenshots associated with these activities.
+
+## 2. Objectives
+
+The primary objectives of this workshop are:
+
+- To understand FPGA architecture and the digital hardware design flow.
+- To explore RTL design using Verilog and SystemVerilog.
+- To understand logic synthesis and netlist generation.
+- To examine FPGA packing, placement, and routing.
+- To analyze setup and hold timing reports.
+- To explore resource utilization and switching activity.
+- To understand the role of activity information in power estimation.
+- To document the experiments and their outputs systematically.
+
+## 3. Tools and Technologies
+
+| Tool / Technology | Application |
+|---|---|
+| Xilinx Vivado | RTL development, simulation, and FPGA design exploration |
+| Verilog / SystemVerilog | Hardware description and digital logic design |
+| Yosys | Logic synthesis |
+| Verilog-to-Routing (VTR) | FPGA architecture and implementation experiments |
+| VPR | Packing, placement, routing, and timing analysis |
+| SOFA / OpenFPGA | FPGA implementation-flow exploration |
+| ACE | Switching-activity analysis |
+| Linux and Bash | Command-line execution and report inspection |
+| Git and GitHub | Version control and technical documentation |
+
+## 4. Experimental Work
+
+### Day 1 — RTL Design and Vivado
+
+**Objective:** Explore digital design implementation using the Vivado design environment.
+
+**Activities:**
+- Worked with a counter-based digital design.
+- Examined RTL design and its implementation workflow.
+- Explored design behavior through available Vivado outputs and screenshots.
+
+**Artifacts:** Available design files and Vivado screenshots.
+
+### Day 2 — VTR-Based FPGA Implementation
+
+**Objective:** Explore the FPGA implementation flow using VTR and VPR.
+
+**Design:** `blink.v`  
+**Architecture:** `EArch.xml`
+
+The VTR flow was executed using the following command:
+
+```bash
+python3 "$VTR_ROOT/vtr_flow/scripts/run_vtr_flow.py" \
+  "$VTR_ROOT/doc/src/quickstart/blink.v" \
+  "$VTR_ROOT/vtr_flow/arch/timing/EArch.xml" \
+  -temp_dir . --route_chan_width 100
+```
+
+**Activities:**
+- Executed the VTR flow for the sample design.
+- Examined generated netlist and implementation files.
+- Explored placement and routing outputs.
+- Inspected setup and hold timing reports.
+- Examined the available pin-utilization and VPR reports.
+
+**Artifacts:** Generated implementation files, timing reports, and available screenshots.
+
+### Day 3 — RISC-V Processor Design Exploration
+
+**Objective:** Explore a RISC-V processor design and its associated hardware-description workflow.
+
+**Activities:**
+- Examined source files associated with a four-stage RISC-V core.
+- Explored Verilog, SystemVerilog, and TL-Verilog-related files.
+- Investigated source conversion and simulation-related artifacts.
+- Reviewed available design outputs.
+
+**Artifacts:** Available source files and screenshots documenting the exploration.
+
+*Note: Successful end-to-end processor simulation or implementation is not claimed without corresponding verified results.*
+
+### Day 4 — SOFA / OpenFPGA Counter Implementation Analysis
+
+**Objective:** Examine FPGA implementation artifacts and understand the information contained in generated reports.
+
+**Activities:**
+- Inspected counter-related netlist files.
+- Examined resource statistics and pin-utilization reports.
+- Reviewed placement and routing outputs.
+- Inspected setup and hold timing reports.
+- Examined available ACE activity files.
+
+**Artifacts:** Existing counter implementation files, reports, and available screenshots.
+
+*Note: Existing reference outputs are identified as such and are not represented as newly generated implementation results.*
+
+### Day 5 — Switching-Activity and Power-Analysis Exploration
+
+**Objective:** Investigate switching activity and the available outputs associated with power analysis.
+
+**Activities:**
+- Examined ACE activity-analysis output.
+- Inspected network statistics and latch information.
+- Reviewed available activity files and implementation reports.
+- Investigated the available power-analysis artifacts.
+
+**Observed ACE output:**
+- Network objects: 49
+- Primary inputs: 2
+- Primary outputs: 8
+- Network latches: 8
+- Detected clock: `clk`
+- Reported ACE execution time: 0.06 seconds
+
+These values describe the inspected counter network and ACE run; they are not measurements of the RISC-V processor.
+
+*Note: Switching-activity analysis and power estimation are distinct. A final power result requires the relevant power-analysis output and supporting assumptions.*
+
+## 5. FPGA Design and Implementation Flow
+
+The general FPGA implementation process explored in these exercises can be summarized as follows:
+
+1. **RTL design:** Describe the digital logic using a hardware description language.
+2. **Synthesis:** Translate the RTL into a logic-level netlist.
+3. **Packing:** Group logic elements into resources supported by the FPGA architecture.
+4. **Placement:** Assign the logic blocks to physical locations.
+5. **Routing:** Establish interconnections between placed blocks.
+6. **Timing analysis:** Examine path delays and setup and hold timing constraints.
+7. **Activity analysis:** Examine switching behavior and activity assumptions.
+8. **Power estimation:** Estimate power using a compatible analysis flow, technology data, and activity information.
+
+The precise stages and generated artifacts depend on the design, architecture, and tools used.
+
+## 6. Results and Documentation
+
+The repository contains the available evidence collected during the workshop, including:
+
+- RTL and hardware-design files.
+- Netlist and synthesis-related outputs.
+- Placement and routing artifacts.
+- Setup and hold timing reports.
+- Resource and pin-utilization reports.
+- ACE activity-analysis outputs.
+- Screenshots of relevant tool interfaces and terminal results.
+
+The artifacts should be interpreted according to their source and execution history. The existence of a report or reference file does not, by itself, establish that the corresponding flow was rerun.
+
+## 7. Learning Outcomes
+
+The exercises provided practical exposure to:
+
+- FPGA architecture and digital hardware implementation.
+- RTL design and synthesis concepts.
+- Netlist inspection and implementation reports.
+- FPGA placement, routing, and timing analysis.
+- Switching-activity analysis and its relationship to power estimation.
+- Command-line workflows and technical documentation.
+
+
+---
+
+**Author:** Ashley Bothello  
+**Repository:** [VSD-FPGA-Fabric-Design-Architecture](https://github.com/ashleybothello/VSD-FPGA-Fabric-Design-Architecture)
+
+*This repository serves as a technical record of the workshop exercises, available implementation artifacts, and documented learning outcomes.*
