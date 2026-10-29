@@ -1,5 +1,6 @@
 # FPGA — Fabric, Design and Architecture
 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/ashleybothello/VSD-FPGA-Fabric-Design-Architecture?style=social)](https://github.com/ashleybothello/VSD-FPGA-Fabric-Design-Architecture/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/ashleybothello/VSD-FPGA-Fabric-Design-Architecture?style=social)](https://github.com/ashleybothello/VSD-FPGA-Fabric-Design-Architecture/network/members)
 
@@ -484,3 +485,4 @@ The general FPGA implementation process explored across all five days can be sum
 
 **Author:** Ashley Bothello  
 **Repository:** [VSD-FPGA-Fabric-Design-Architecture](https://github.com/ashleybothello/VSD-FPGA-Fabric-Design-Architecture)
+
